@@ -9,15 +9,28 @@ managementApp.config(['$urlRouterProvider', '$stateProvider', '$locationProvider
   $locationProvider.hashPrefix('!');
 
   $stateProvider
-    .state('userList', {
-      url: '/users',
-      templateUrl: 'user-management/user-list/user-list.template.html',
-      controller: 'UserListController'
+    .state('userManagement', {
+      url: '/',
+      templateUrl: 'user-management/user-management.template.html',
+      controller: 'UserManagementController'
     })
-    .state('user', {
-      url: '/users/:userId',
-      templateUrl: 'user-management/user/user.template.html',
-      controller: 'UserController'
+    .state('userManagement.userList', {
+      url: 'users',
+      views: {
+        '': {
+          templateUrl: 'user-management/user-list/user-list.template.html',
+          controller: 'UserListController'
+        }
+      }
+    })
+    .state('userManagement.user', {
+      url: 'users/:userId',
+      views: {
+        '': {
+          templateUrl: 'user-management/user/user.template.html',
+          controller: 'UserController'
+        }
+      }
     });
 
     $urlRouterProvider.otherwise('/users');
