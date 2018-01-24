@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="userManagementApp" ng-strict-di>
+<html lang="en" ng-app="userManagementApp" ng-strict-di>
 <head>
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>User Management App</title>
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> -->
-  <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+
+  <title>User Management App</title>
 </head>
 <body>
   <div ui-view></div>
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/jQuery/dist/jquery.slim.min.js"></script>
+  <script src="bower_components/popper.js/dist/popper.min.js"></script>
+  <script src="bower_components/bootstrap/dist/ja/bootstrap.min.js"></script>
+
   <script src="app.js"></script>
   <script src="user-management/user-management.controller.js"></script>
   <script src="user-management/user/user.controller.js"></script>
