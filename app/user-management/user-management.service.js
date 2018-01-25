@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('userManagementApp')
-.factory('UserManagementService', [ '$q', function($q) {
-    //In real life a proper back-end is invoked, but in thi case a json file in read
+    .factory('UserManagementService', [ '$q', '$http', UserManagementService ]);
+    //In real life a proper back-end is invoked, but in this case a json file is used
     // var usersResource = $resource('/users', {}, {
     //     query: { method: 'GET', cache: true },
     //     update: { method: 'PUT'}
     // });
 
+function UserManagementService($q, $http) { 
     return {
         getUsers: getUsers,
         getUser: getUser,
@@ -15,8 +16,8 @@ angular.module('userManagementApp')
     };
 
     function getUsers() {
-        return $http.get('user-list.json').then(function(users) {
-            return users;
+        return $http.get('user_list.json').then(function(result) {
+            return result.data;
         });
         //return usersResource.query();
     }
@@ -34,4 +35,4 @@ angular.module('userManagementApp')
         return $q.when();
         //return usersResource.update(user);
     }
-}]);
+};
