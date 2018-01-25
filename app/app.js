@@ -11,15 +11,14 @@ managementApp.config(['$urlRouterProvider', '$stateProvider', '$locationProvider
   $stateProvider
     .state('userManagement', {
       url: '/',
-      templateUrl: 'user-management/user-management.template.html',
-      controller: 'UserManagementController'
+      templateUrl: 'user-management/user-management.template.html'
     })
     .state('userManagement.userList', {
       url: 'users',
       views: {
         '': {
           templateUrl: 'user-management/user-list/user-list.template.html',
-          controller: 'UserListController'
+          controller: 'UserListController as userListCtrl'
         }
       }
     })
@@ -28,7 +27,7 @@ managementApp.config(['$urlRouterProvider', '$stateProvider', '$locationProvider
       views: {
         '': {
           templateUrl: 'user-management/user/user.template.html',
-          controller: 'UserController'
+          controller: 'UserController as userCtrl'
         }
       }
     });
